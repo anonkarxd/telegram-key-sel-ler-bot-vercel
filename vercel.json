@@ -4,6 +4,9 @@
     { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1.js" }
+    // ❤️ map root "/" to our health function
+    { "src": "/",          "dest": "/api/health.js" },
+    // existing API routes
+    { "src": "/api/(.*)",  "dest": "/api/$1.js" }
   ]
 }
