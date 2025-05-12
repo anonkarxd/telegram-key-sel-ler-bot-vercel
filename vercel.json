@@ -1,12 +1,19 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" }
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    // ❤️ map root "/" to our health function
-    { "src": "/",          "dest": "/api/health.js" },
-    // existing API routes
-    { "src": "/api/(.*)",  "dest": "/api/$1.js" }
+    {
+      "src": "/",
+      "dest": "/api/health.js"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1.js"
+    }
   ]
 }
